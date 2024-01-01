@@ -35,6 +35,10 @@ header{
   border-bottom: 0.1vh solid #eee;
   border-color: rgba(255, 255, 255, 0.1);
 }
+.reload{
+  cursor: pointer;
+
+}
 
 footer{  
   border-top: 0.1vh solid #eee;
