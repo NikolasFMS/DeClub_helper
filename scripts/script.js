@@ -245,16 +245,15 @@ function handlePage4() {
 }
 
 function handleNextPage() {
-    if (pageNumber === 4 && roundNumber === playersName.length) {
-        if(cercle2 = 1 && playerCount < 6) {
-          cercle2++;
-          newRound();
-        } else {
-          pageNumber++;
-        }
+    if (pageNumber === 4 && roundNumber > playersName.length - 1) {
+        pageNumber++;
     }
-
-    if (pageNumber === 5 && roundNumber < playersName.length) {
+    if (playersName.length < 6) {
+        cercle2 = 2;
+    } else {
+        cercle2 = 1;
+    }
+    if (pageNumber === 5 && roundNumber < playersName.length * cercle2) {
         newRound();
     }
 
@@ -405,7 +404,7 @@ function playClickSound() {
 const myElement = document.getElementById('reload');
 
 // Добавление обработчика событий для клика по элементу
-myElement.addEventListener('click', function() {
+myElement.addEventListener('click', function () {
     // Обновление страницы
     location.reload();
 });
