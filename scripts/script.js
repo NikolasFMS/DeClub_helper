@@ -246,7 +246,7 @@ function handlePage4() {
 
 function handleNextPage() {
     if (pageNumber === 4 && roundNumber === playersName.length) {
-        if(cercle2 = 1 && playerCount > 6) {
+        if(cercle2 = 1 && playerCount < 6) {
           cercle2++;
           newRound();
         } else {
