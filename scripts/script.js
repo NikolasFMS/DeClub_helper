@@ -274,8 +274,8 @@ function newRound() {
 
 function moveLastPlayerToFirst() {
     if (playersName.length > 1) {
-        const lastPlayer = playersName.pop();
-        playersName.unshift(lastPlayer);
+        const lastPlayer = playersName.shift();
+        playersName.push(lastPlayer);  // Используем push для добавления элемента в конец массива
     }
     console.log(playersName);
 }
