@@ -130,6 +130,7 @@ let playerRole = []; // Роли для каждого игрока
 let secretWord = ""; // Загаданное слово
 let hideWord = false;
 let a = ['st', 'nd', 'rd'];
+let cercle2 = 1;
 const clickSound = document.getElementById('clickSound');
 
 
@@ -245,7 +246,12 @@ function handlePage4() {
 
 function handleNextPage() {
     if (pageNumber === 4 && roundNumber === playersName.length) {
-        pageNumber++;
+        if(cercle2 = 1 && playerCount > 6) {
+          cercle2++;
+          newRound();
+        } else {
+          pageNumber++;
+        }
     }
 
     if (pageNumber === 5 && roundNumber < playersName.length) {
