@@ -92,7 +92,7 @@ const siteElements = [
             { "type": "p", "id": "crimeInfo", "class": "enterSecretWord", "text": "Come up with and write down the word association" },
 
             { "type": "button", "class": "button next", "text": "NEXT" },
-            { "type": "p", "text": 'Click "NEXT" button nd pass the phone to the next player.' }
+            { "type": "p", "text": 'Click "NEXT" button and pass the phone to the next player.' }
         ]
     },
     {
@@ -190,6 +190,7 @@ function handlePage4() {
     overlay.addEventListener("click", function () {
         playClickSound();
         document.getElementById("playerRole").textContent = `Youre role: ${playerRole[currentPlayerIndex - 1]}`;
+        document.getElementById("crimeInfo").textContent = 'Well done, now click "NEXT" button.';
         overlay.style.display = "none";
         cleanNameWarning();
         hideWord = false;
@@ -203,6 +204,7 @@ function handlePage4() {
     });
 
     if (currentPlayerIndex === 1) {
+        cleanNameWarning();
         const wordInput = document.getElementById("wordInput");
 
         wordInput.addEventListener("click", function () {
@@ -335,8 +337,10 @@ function page4Text() {
     if (currentPlayerIndex === 1) {
         document.getElementById("playerRole").textContent = `Youre role: ${playerRole[currentPlayerIndex - 1]}`;
     } else {
+        document.getElementById("crimeInfo").textContent = "Click on the window to reveal the hidden word";
         document.getElementById("playerRole").textContent = `Youre role: hide`;
     }
+
 }
 function shaffleRols() {
     playerRole = Array.from(playersName, () => "Detective");
