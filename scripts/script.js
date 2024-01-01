@@ -22,7 +22,7 @@ const siteElements = [
         "class": "page page2",
         "type": "div",
         "content": [
-            { "type": "h1", "text": "Select number of players:" },
+            { "type": "h1", "text": "How many players?" },
             {
                 "type": "div", "class": "select-container", "content": [
                     {
@@ -49,8 +49,8 @@ const siteElements = [
                 ]
             },
             { "type": "p", "text": "Select number of players" },
-            { "type": "button", "class": "button next", "text": "START" },
-            { "type": "p", "text": 'Click "START" button to start a new game Detective Club.' }
+            { "type": "button", "class": "button next", "text": "NEXT" },
+            { "type": "p", "text": 'Click "NEXT" button to enter player names.' }
         ]
     },
     {
@@ -59,7 +59,7 @@ const siteElements = [
         "class": "page page3",
         "type": "div",
         "content": [
-            { "type": "h1", "text": "Enter player names:" },
+            { "type": "h1", "text": "Player names" },
             {
                 "type": "div", "class": "form-container", "content": [
                     {
@@ -69,9 +69,9 @@ const siteElements = [
                     }
                 ]
             },
-            { "type": "p", "id": "crimeInfo", "class": "enterPLayers", "text": "Select a color and enter a name for each player:" },
+            { "type": "p", "id": "crimeInfo", "class": "enterPLayers", "text": "Enter a name for each player:" },
             { "type": "button", "class": "button next", "text": "NEXT" },
-            { "type": "p", "text": 'Click "START" button to start a new game Detective Club.' }
+            { "type": "p", "text": 'Click "NEXT" button if you have entered all the player names.' }
         ]
     },
     {
@@ -87,13 +87,12 @@ const siteElements = [
                 "type": "div", "class": "form-container secret-word", "content": [
                     { "type": "input", "id": "wordInput", "class": "secret-word-text", "placeholder": "Enter the hidden word" },
                     { "type": "div", "class": "overlay", "id": "overlay", "style": 'none' }
-
                 ]
             },
-            { "type": "p", "id": "crimeInfo", "class": "enterSecretWord", "text": "Secret password" },
+            { "type": "p", "id": "crimeInfo", "class": "enterSecretWord", "text": "Come up with and write down the word association" },
 
             { "type": "button", "class": "button next", "text": "NEXT" },
-            { "type": "p", "text": 'Click "NEXT" button to start a new game Detective Club.' }
+            { "type": "p", "text": 'Click "NEXT" button nd pass the phone to the next player.' }
         ]
     },
     {
@@ -105,7 +104,7 @@ const siteElements = [
         "content": [
             { "type": "h2", "text": "Next round" },
             { "type": "button", "class": "button next", "text": "NEXT ROUND" },
-            { "type": "p", "text": 'Click "START" button to start a new game Detective Club.' }
+            { "type": "p", "text": 'Click "NEXT ROUND" button to start a new Round.' }
         ]
     },
     {
@@ -155,7 +154,7 @@ function drawPage(pageNumber) {
 
 function handleButtonClick(event) {
     const targetButton = event.target;
-    if (targetButton.classList.contains("button") && targetButton.classList.contains("next")) {
+    if (targetButton.classList.contains("button") && targetButton.classList.contains("next") || (event.type === "keydown" && event.key === "Enter")) {
         const currentPage = siteElements.find((element) => element.page === pageNumber);
         playClickSound();
         console.log(`page: ${pageNumber}, Round: ${roundNumber}, Player: number ${currentPlayerIndex}, name ${playersName[currentPlayerIndex - 1]}`);
