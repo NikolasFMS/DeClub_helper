@@ -189,6 +189,7 @@ function handlePage4() {
 
     overlay.addEventListener("click", function () {
         playClickSound();
+        document.getElementById("playerRole").textContent = `Youre role: ${playerRole[currentPlayerIndex - 1]}`;
         overlay.style.display = "none";
         cleanNameWarning();
         hideWord = false;
@@ -327,9 +328,12 @@ function page4Text() {
     }
     document.getElementById("roundNumberText").textContent = `Round: ${roundNumber}`;
     document.getElementById("namePlayerText").textContent = `${currentPlayerIndex}${n} player: ${playersName[currentPlayerIndex - 1]}`;
-    document.getElementById("playerRole").textContent = `Youre role: ${playerRole[currentPlayerIndex - 1]}`;
+    if (currentPlayerIndex === 1) {
+        document.getElementById("playerRole").textContent = `Youre role: ${playerRole[currentPlayerIndex - 1]}`;
+    } else {
+        document.getElementById("playerRole").textContent = `Youre role: hide`;
+    }
 }
-
 function shaffleRols() {
     playerRole = Array.from(playersName, () => "Detective");
     const randomRepeats = Math.floor(Math.random() * 12) + 5;
@@ -389,3 +393,13 @@ function playClickSound() {
     // Воспроизводим звук
     clickSound.play();
 }
+
+
+// Получение элемента по его идентификатору
+const myElement = document.getElementById('reload');
+
+// Добавление обработчика событий для клика по элементу
+myElement.addEventListener('click', function() {
+    // Обновление страницы
+    location.reload();
+});
