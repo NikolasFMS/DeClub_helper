@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
+    <link rel="icon" href="faviconDective.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Detective club helper</title>
+</head>
+
+<body>
+    <!-- Аудио для начала и конца -->
+    <audio id="clickSound" src="audio/ui-click-end.mp3"></audio>
+
+    <!-- Шапка страницы -->
+    <header>
+        <div class="top">
+            <h2>Detective club</h2>
+        </div>
+    </header>
+
+    <!-- Основной контент страницы -->
+    <div class="app">
+
+    </div>
+    <!-- Подвал страницы -->
+    <footer>
+        <p class="bot">@2023 Nikolas</p>
+    </footer>
+
+    <!-- Прелоадер -->
+    <div class="preloader_malc" id="preloader_malc">
+        <div>Loading...</div>
+    </div>
+
+    <!-- Стили для прелоадера -->
+    <style type="text/css">
+        #preloader_malc {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #222;
+            z-index: 99;
+        }
+
+        #preloader_malc div {
+            background: #222;
+            width: 100%;
+            height: 100%;
+            font-family: 'Poppins', sans-serif, Arial, Verdana;
+            font-size: 2vh;
+            color: #ccc;
+            text-align: center;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: 0 auto;
+            padding: 50vh 0;
+        }
+    </style>
+
+    <!-- Скрипт для отображения прелоадера -->
+    <script type="text/javascript">
+        window.onload = function () {
+            setTimeout(function () {
+                document.getElementById("preloader_malc").style.display = "none";
+            }, 700);
+        };
+    </script>
+
+    <script src="scripts/script.js"></script>
+
+</body>
+
+</html>
