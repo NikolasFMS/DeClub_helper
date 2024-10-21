@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'RLV1'; // Уникальное имя для кэша
+const CACHE_NAME = 'DeClV1'; // Уникальное имя для кэша
 const URLS_TO_CACHE = [
     'index.html',
     'audio/click.mp3',
